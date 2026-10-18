@@ -12,7 +12,7 @@ Or add the tap first, then install any of its packages:
 
 ```sh
 brew tap z0mbix/tap
-brew install kqt
+brew install z0mbix/tap/kqt
 ```
 
 Update packages with `brew update` followed by `brew upgrade`.
