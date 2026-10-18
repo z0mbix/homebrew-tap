@@ -6,6 +6,7 @@ Homebrew packages for software by [z0mbix](https://github.com/z0mbix).
 
 ```sh
 brew install z0mbix/tap/kqt
+brew install z0mbix/tap/rolecule
 ```
 
 Or add the tap first, then install any of its packages:
@@ -22,9 +23,11 @@ Update packages with `brew update` followed by `brew upgrade`.
 | Formula | Description | Platforms |
 | --- | --- | --- |
 | [kqt](https://github.com/z0mbix/kqt) | A keyboard-first Kubernetes browser | macOS Apple Silicon and Intel |
+| [rolecule](https://github.com/z0mbix/rolecule) | Test Ansible roles in Docker or Podman containers | macOS and Linux, ARM64 and AMD64 |
 
 Formulae install published binaries and verify their SHA-256 checksums. No Go
 compiler or kubectl installation is required for kqt.
+Rolecule requires Docker or Podman, Ansible, and a verifier such as Goss to run role tests.
 
 ## Publishing
 
@@ -32,6 +35,9 @@ Each software repository owns its release process and updates its formula here
 after publishing a stable release. kqt generates `Formula/kqt.rb` from its
 published archives and `SHA256SUMS` using `scripts/homebrew_formula.py` in
 [z0mbix/kqt](https://github.com/z0mbix/kqt). Prereleases do not update this tap.
+Rolecule generates `Formula/rolecule.rb` from its published macOS and Linux
+archives and versioned `SHA256SUMS` using `scripts/homebrew_formula.py` in
+[z0mbix/rolecule](https://github.com/z0mbix/rolecule).
 
 Each publishing repository uses its own write-enabled deploy key scoped to this
 tap. The private key stays in that repository's Actions secrets. Do not reuse
