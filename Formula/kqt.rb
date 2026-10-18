@@ -2,7 +2,6 @@
 class Kqt < Formula
   desc "Keyboard-first Kubernetes browser with live resource tables and logs"
   homepage "https://github.com/z0mbix/kqt"
-  version "0.5.0"
 
   depends_on :macos
 
@@ -25,7 +24,7 @@ class Kqt < Formula
   end
 
   test do
-    assert_equal "kqt version v#{version}", shell_output("#{bin}/kqt --version").strip
+    assert_equal "kqt version v0.5.0", shell_output("#{bin}/kqt --version").strip
     assert_match "Kubernetes", shell_output("#{bin}/kqt --help")
   end
 end
