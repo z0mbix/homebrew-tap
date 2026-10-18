@@ -2,7 +2,6 @@
 class Rolecule < Formula
   desc "Test Ansible roles in Docker or Podman containers"
   homepage "https://github.com/z0mbix/rolecule"
-  version "0.7.0"
   license "GPL-3.0-only"
 
   on_macos do
