@@ -2,7 +2,6 @@
 class Fmn < Formula
   desc "Local-first shell history manager for Fish, Zsh, and Bash"
   homepage "https://github.com/z0mbix/fmn"
-  version "0.1.0"
   license "MIT"
 
   on_macos do
