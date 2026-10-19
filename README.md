@@ -6,6 +6,7 @@ Homebrew packages for software by [z0mbix](https://github.com/z0mbix).
 
 ```sh
 brew install z0mbix/tap/kqt
+brew install z0mbix/tap/fmn
 brew install z0mbix/tap/rolecule
 ```
 
@@ -23,6 +24,7 @@ Update packages with `brew update` followed by `brew upgrade`.
 | Formula | Description | Platforms |
 | --- | --- | --- |
 | [kqt](https://github.com/z0mbix/kqt) | A keyboard-first Kubernetes browser | macOS Apple Silicon and Intel |
+| [fmn](https://github.com/z0mbix/fmn) | Local-first shell history manager for Fish, Zsh, and Bash | macOS and Linux, ARM64 and AMD64 |
 | [rolecule](https://github.com/z0mbix/rolecule) | Test Ansible roles in Docker or Podman containers | macOS and Linux, ARM64 and AMD64 |
 
 Formulae install published binaries and verify their SHA-256 checksums. No Go
@@ -38,6 +40,11 @@ published archives and `SHA256SUMS` using `scripts/homebrew_formula.py` in
 Rolecule generates `Formula/rolecule.rb` from its published macOS and Linux
 archives and versioned `SHA256SUMS` using `scripts/homebrew_formula.py` in
 [z0mbix/rolecule](https://github.com/z0mbix/rolecule).
+
+fmn generates `Formula/fmn.rb` from its published macOS and Linux archives and
+`sha256.sum` using `scripts/homebrew_formula.py` in
+[z0mbix/fmn](https://github.com/z0mbix/fmn). Its formula checks the installed
+version and runs SQLite diagnostics in an isolated test directory.
 
 Each publishing repository uses its own write-enabled deploy key scoped to this
 tap. The private key stays in that repository's Actions secrets. Do not reuse
