@@ -6,35 +6,37 @@ class Fmn < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/z0mbix/fmn/releases/download/v0.1.0/fmn-aarch64-apple-darwin.tar.xz"
-      sha256 "1e21fc79cdeccb9468798b45c17aaffaeac31514d2571f1eddcc776d4b882e7f"
+      url "https://github.com/z0mbix/fmn/releases/download/v0.2.0/fmn-aarch64-apple-darwin.tar.xz"
+      sha256 "73fadb8c167c775b5e8a8db7dfd46c96b1b03e584f5b00c35ef85c9dcbff5b04"
     end
 
     on_intel do
-      url "https://github.com/z0mbix/fmn/releases/download/v0.1.0/fmn-x86_64-apple-darwin.tar.xz"
-      sha256 "dadd0f1d6549540ce7099656da767a3b883e9a5345730f68faf748563d39a68a"
+      url "https://github.com/z0mbix/fmn/releases/download/v0.2.0/fmn-x86_64-apple-darwin.tar.xz"
+      sha256 "e752ac74dcfdc143e8aefcdffb48acf1c3560ea9e928dff5268b91ca622c3368"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/z0mbix/fmn/releases/download/v0.1.0/fmn-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "8676e949323635f9e4d35edc6ce4f755fb3b31e84f226f46e2a77920acdc4501"
+      url "https://github.com/z0mbix/fmn/releases/download/v0.2.0/fmn-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "2f0e623bc144cd4323c6691ed3e5a48b79202b05da1f70f11c7b6a5280b47dcb"
     end
 
     on_intel do
-      url "https://github.com/z0mbix/fmn/releases/download/v0.1.0/fmn-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "311021bd49e060b40aedd4212c6f5ef5618394ec9945ad8962291c603cd45897"
+      url "https://github.com/z0mbix/fmn/releases/download/v0.2.0/fmn-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "c56c43dbe06e09b423193c7f89346133baaae9cadf870941942b54173764fa94"
     end
   end
 
   def install
     bin.install "fmn"
     doc.install "README.md"
+    doc.install "THEMES.md" if File.exist?("THEMES.md")
+    doc.install "licenses" if Dir.exist?("licenses")
   end
 
   test do
-    assert_equal "fmn 0.1.0", shell_output("#{bin}/fmn --version").strip
+    assert_equal "fmn 0.2.0", shell_output("#{bin}/fmn --version").strip
     ENV["FMN_DATA_DIR"] = (testpath/"history").to_s
     ENV["FMN_CONFIG"] = (testpath/"config.toml").to_s
     system bin/"fmn", "doctor"
