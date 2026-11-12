@@ -7,13 +7,13 @@ class Kqt < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/z0mbix/kqt/releases/download/v0.7.2/kqt-darwin-arm64.tar.gz"
-      sha256 "15754cd52fbcbb83194be5925b43d443f0e83113d9bc437038079b8fbd829619"
+      url "https://github.com/z0mbix/kqt/releases/download/v0.7.3/kqt-darwin-arm64.tar.gz"
+      sha256 "b2a7c7a79950fd5477656f623da17ef357ef0b8801189af4e3a48e2b3882bfe2"
     end
 
     on_intel do
-      url "https://github.com/z0mbix/kqt/releases/download/v0.7.2/kqt-darwin-amd64.tar.gz"
-      sha256 "3c98cadb12a928bd787c0ad983bbde25da010f96742289bdffe25c080275f2ce"
+      url "https://github.com/z0mbix/kqt/releases/download/v0.7.3/kqt-darwin-amd64.tar.gz"
+      sha256 "aed6463d67887e0dfe15d2024ae06cfa159711a989b45776369e2cf6041c431c"
     end
   end
 
@@ -24,7 +24,7 @@ class Kqt < Formula
   end
 
   test do
-    assert_equal "kqt version v0.7.2", shell_output("#{bin}/kqt --version").strip
+    assert_equal "kqt version v0.7.3", shell_output("#{bin}/kqt --version").strip
     assert_match "Kubernetes", shell_output("#{bin}/kqt --help")
   end
 end
